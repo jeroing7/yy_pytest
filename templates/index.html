@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>야 너두 파이썬 할 수 있어</title>
+  <!-- static 폴더에 있는 styles.css 불러오기 -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body>
+  <!-- 1) 헤더 -->
+  <header>
+    <h1>야 너두 파이썬 할 수 있어</h1>
+    <p>아래에 제시된 파이썬 코드를 보고, 출력 결과를 맞춰보세요!</p>
+  </header>
+
+  <!-- 2) 문제(코드 스니펫) 영역: 문제 번호/총 문제 수(progress) 포함 -->
+  <section id="problem-area">
+    <h2>
+      문제 <span id="progress"></span>
+    </h2>
+    <pre><code id="code-snippet">
+# 여기에 문제가 표시됩니다.
+    </code></pre>
+  </section>
+
+  <!-- 3) 학생의 정답 입력 영역 -->
+  <section id="answer-area">
+    <h2>예상 출력 결과를 입력하세요</h2>
+    <textarea
+      id="player-answer"
+      rows="5"
+      placeholder="출력 결과를 한 줄씩 입력하세요. 예:&#10;1&#10;3&#10;5"
+    ></textarea>
+    <br />
+    <button id="submit-btn">제출하기</button>
+  </section>
+
+  <!-- 4) 정답 비교 후 피드백 표시 영역 -->
+  <section id="feedback-area">
+    <p id="feedback-message"></p>
+  </section>
+
+  <!-- static 폴더에 있는 script.js 불러오기 -->
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
